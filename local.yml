@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: creates a file
+    file: path=/home/ansible/ansipull.txt state=touch
