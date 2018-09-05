@@ -1,7 +1,10 @@
 ---
 - hosts: localhost
-#  become: yes
+  become: yes
   gather_facts: no
   tasks:
-  - name: creates a file
+  - name: creates a file, install ntp and make it enabled
     file: path=/home/ansible/ansipull.txt state=touch
+    apt: name=ntp state=present
+    servuce: name=ntp state=started enabled=yes
+    
